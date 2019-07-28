@@ -11,11 +11,11 @@ public class Account {
     private UUID ownerId;
     private AmountAndCurrency balance;
 
-    public void subtractMoney(AmountAndCurrency balance, MoneyExchanger moneyExchanger) {
-
+    public Account subtractMoney(AmountAndCurrency balance, MoneyExchanger moneyExchanger) {
+        return this;
     }
 
-    public void addMoney(AmountAndCurrency balance, MoneyExchanger moneyExchanger) {
-
+    public Account addMoney(AmountAndCurrency balance, MoneyExchanger moneyExchanger) {
+        return this;
     }
 }
