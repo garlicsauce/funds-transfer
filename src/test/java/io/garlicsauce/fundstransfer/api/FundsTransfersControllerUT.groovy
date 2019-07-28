@@ -22,8 +22,10 @@ class FundsTransfersControllerUT extends Specification {
                 {
                     "senderId": "${UUID.randomUUID()}",
                     "recipientId": "${UUID.randomUUID()}",
-                    "amount": 12345.65,
-                    "currency": "EUR"
+                    "balance": {
+                        "amount": 12345.65,
+                        "currency": "EUR"
+                    }
                 }
             """
 
@@ -48,10 +50,11 @@ class FundsTransfersControllerUT extends Specification {
 
         where:
             payload << [
-                """{ "recipientId": "${UUID.randomUUID()}", "amount": 12345.65, "currency": "EUR" }""",
-                """{ "senderId": "${UUID.randomUUID()}", "amount": 12345.65, "currency": "EUR" }""",
-                """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}", "currency": "EUR" }""",
-                """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}", "amount": 12345.65 }"""
+                """{ "recipientId": "${UUID.randomUUID()}", "balance": { "amount": 12345.65, "currency": "EUR" }}""",
+                """{ "senderId": "${UUID.randomUUID()}", "balance": { "amount": 12345.65, "currency": "EUR" }}""",
+                """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}" }""",
+                """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}", "balance": { "currency": "EUR" }}""",
+                """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}", "balance": { "amount": 12345.65 }}"""
             ]
     }
 }
