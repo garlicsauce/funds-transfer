@@ -1,0 +1,11 @@
+language: java
+sudo: true
+
+jdk:
+  - openjdk8
+
+jobs:
+  include:
+    - stage: build with maven
+      script:
+        - ./mvnw clean install
