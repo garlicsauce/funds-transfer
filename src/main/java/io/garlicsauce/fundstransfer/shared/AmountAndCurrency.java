@@ -3,6 +3,7 @@ package io.garlicsauce.fundstransfer.shared;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import lombok.ToString;
 import lombok.experimental.Wither;
 
 import javax.validation.constraints.NotNull;
@@ -12,6 +13,7 @@ import java.math.RoundingMode;
 
 @Wither
 @Getter
+@ToString
 public class AmountAndCurrency implements Serializable {
 
     @NotNull
