@@ -1,23 +1,30 @@
 package io.garlicsauce.fundstransfer.shared;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 import lombok.Value;
 import lombok.experimental.Wither;
+import org.springframework.util.Assert;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Objects;
 
-@Value
 @Wither
+@Getter
 public class AmountAndCurrency implements Serializable {
 
     @NotNull
-    private BigDecimal amount;
+    private final BigDecimal amount;
     @NotNull
-    private Currency currency;
+    private final Currency currency;
 
-    public AmountAndCurrency(BigDecimal amount, Currency currency) {
+    @JsonCreator
+    public AmountAndCurrency(@JsonProperty("amount") BigDecimal amount,
+                             @JsonProperty("currency") Currency currency) {
         this.amount = amount.setScale(2, RoundingMode.HALF_UP);
         this.currency = currency;
     }

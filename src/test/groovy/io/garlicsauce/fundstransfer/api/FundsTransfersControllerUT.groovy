@@ -34,7 +34,7 @@ class FundsTransfersControllerUT extends Specification {
 
         when:
             def call = mockMvc.perform(post('/fundsTransfers')
-                    .contentType(MediaType.APPLICATION_JSON_UTF8)
+                    .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
                     .content(payload))
 
         then:
@@ -56,8 +56,6 @@ class FundsTransfersControllerUT extends Specification {
                 """{ "recipientId": "${UUID.randomUUID()}", "balance": { "amount": 12345.65, "currency": "EUR" }}""",
                 """{ "senderId": "${UUID.randomUUID()}", "balance": { "amount": 12345.65, "currency": "EUR" }}""",
                 """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}" }""",
-                """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}", "balance": { "currency": "EUR" }}""",
-                """{ "senderId": "${UUID.randomUUID()}", "recipientId": "${UUID.randomUUID()}", "balance": { "amount": 12345.65 }}"""
             ]
     }
 }
