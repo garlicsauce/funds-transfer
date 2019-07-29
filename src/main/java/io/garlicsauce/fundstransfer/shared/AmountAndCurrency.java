@@ -3,15 +3,12 @@ package io.garlicsauce.fundstransfer.shared;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import lombok.Value;
 import lombok.experimental.Wither;
-import org.springframework.util.Assert;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Objects;
 
 @Wither
 @Getter
