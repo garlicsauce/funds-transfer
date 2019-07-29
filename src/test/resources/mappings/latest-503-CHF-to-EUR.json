@@ -1,0 +1,29 @@
+{
+  "id" : "57b5cd9a-116b-4b44-ad96-a2326d14cdcf",
+  "name" : "latest",
+  "request" : {
+    "url" : "/latest?base=CHF&symbols=EUR",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 503,
+    "headers" : {
+      "Date" : "Mon, 29 Jul 2019 10:37:03 GMT",
+      "Connection" : "keep-alive",
+      "Set-Cookie" : "__cfduid=dbc6fe8afd0341f89df9ba41964c945e11564396623; expires=Tue, 28-Jul-20 10:37:03 GMT; path=/; domain=.exchangeratesapi.io; HttpOnly",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Credentials" : "true",
+      "Access-Control-Allow-Methods" : "GET",
+      "CF-Cache-Status" : "HIT",
+      "Expires" : "Mon, 29 Jul 2019 11:07:03 GMT",
+      "Cache-Control" : "public, max-age=1800",
+      "Accept-Ranges" : "bytes",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "4fde749088842ab9-WAW"
+    }
+  },
+  "uuid" : "57b5cd9a-116b-4b44-ad96-a2326d14cdcf",
+  "persistent" : true,
+  "insertionIndex" : 8
+}

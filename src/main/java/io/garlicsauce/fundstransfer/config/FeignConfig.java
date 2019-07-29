@@ -6,6 +6,8 @@ import io.garlicsauce.fundstransfer.shared.ExchangeRatesApiUnavailableException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static feign.FeignException.errorStatus;
+
 @Configuration
 public class FeignConfig {
 
@@ -21,7 +23,7 @@ public class FeignConfig {
                 throw new ExchangeRatesApiUnavailableException();
             }
 
-            return new RuntimeException(response.reason());
+            return errorStatus(methodKey, response);
         };
     }
 }
