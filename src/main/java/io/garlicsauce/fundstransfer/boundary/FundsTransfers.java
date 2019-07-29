@@ -21,7 +21,7 @@ public class FundsTransfers {
     public void transferFunds(FundsTransferRequest request) {
         Account senderAccount = accountRepository.findByOwnerId(request.getSenderId())
                 .orElseThrow(AccountNotFoundException::new);
-        Account recipientAccount = accountRepository.findByOwnerId(request.getSenderId())
+        Account recipientAccount = accountRepository.findByOwnerId(request.getRecipientId())
                 .orElseThrow(AccountNotFoundException::new);
 
         accountRepository.save(senderAccount.subtractMoney(request.getBalance(), moneyExchanger));
