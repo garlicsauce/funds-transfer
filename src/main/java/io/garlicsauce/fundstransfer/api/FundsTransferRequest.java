@@ -13,7 +13,6 @@ import java.util.UUID;
 
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 public class FundsTransferRequest implements Serializable {
 
