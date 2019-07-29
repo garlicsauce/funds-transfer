@@ -1,5 +1,6 @@
 package io.garlicsauce.fundstransfer.api
 
+import io.garlicsauce.fundstransfer.boundary.FundsTransfers
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import spock.lang.Specification
@@ -11,8 +12,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 class FundsTransfersControllerUT extends Specification {
 
+    def fundsTransfersMock = Mock(FundsTransfers)
+
     @Subject
-    def controller = new FundsTransfersController()
+    def controller = new FundsTransfersController(fundsTransfersMock)
 
     def mockMvc = MockMvcBuilders.standaloneSetup(controller).build()
 
