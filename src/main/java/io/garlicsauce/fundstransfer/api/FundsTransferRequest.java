@@ -4,7 +4,6 @@ import io.garlicsauce.fundstransfer.shared.AmountAndCurrency;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.Valid;
@@ -13,7 +12,6 @@ import java.io.Serializable;
 import java.util.UUID;
 
 @Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
